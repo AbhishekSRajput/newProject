@@ -1,34 +1,33 @@
 import React from 'react';
+import Head from 'next/head';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
-import Button from '@material-ui/core/Button';
 
-export default function Index() {
+export default function About() {
 	return (
 		<Container maxWidth="sm">
-			<Link href="/about" color="secondary">
-				Go to the about page
-			</Link>
+			<Head>
+				<title>Portfolio | About</title>
+			</Head>
 			<Box my={4}>
 				<Typography variant="h4" component="h1" gutterBottom>
 					Next.js example
 				</Typography>
-				<Typography
-					variant="h3"
-					component="h4"
-					color="secondary"
-					align="center"
+				<Button
+					variant="contained"
+					color="primary"
+					component={Link}
+					naked
+					href="/"
 				>
-					Create a New Note
-				</Typography>
-
-				<Button type="submit" variant="outlined" color="secondary">
-					Create
+					Go to the main page
 				</Button>
-
+				<ProTip />
 				<Copyright />
 			</Box>
 		</Container>
